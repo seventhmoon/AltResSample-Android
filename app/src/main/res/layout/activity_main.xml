@@ -14,49 +14,50 @@
             type="ObservableMap&lt;String, Object&gt;" />
     </data>
 
-    <GridLayout
-
+    <android.support.v7.widget.GridLayout
+        android:layout_margin="16dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2"
+        app:columnCount="2"
+        app:orientation="horizontal"
         tools:context="com.androidfung.altrestest.MainActivity">
 
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:padding="4dp"
             android:text="Locale"
-            android:textAlignment="textStart" />
+            android:textAlignment="textStart"
+            app:layout_columnWeight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/locale_used"
-            android:textAlignment="textEnd" />
+            android:padding="4dp"
+            android:text="@{bindingData[`locale`]}"
+            android:textAlignment="textEnd"
+            app:layout_columnWeight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Screen Size"
-            android:textAlignment="textStart" />
+            android:padding="4dp"
+            android:textAlignment="textStart"
+            app:layout_columnWeight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/screen_size"
-            android:textAlignment="textEnd" />
+            android:textAlignment="textEnd"
+            android:padding="4dp"
+            app:layout_columnWeight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Screen Density"
-            android:textAlignment="textStart" />
+            android:padding="4dp"
+            android:textAlignment="textStart"
+            app:layout_columnWeight="1" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="@string/screen_density"
-            android:textAlignment="textEnd" />
+            android:padding="4dp"
+            android:textAlignment="textEnd"
+            app:layout_columnWeight="1" />
 
-    </GridLayout>
+    </android.support.v7.widget.GridLayout>
 </layout>

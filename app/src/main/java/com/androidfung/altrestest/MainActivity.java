@@ -24,7 +24,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
         ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        binding.setVariable(com.androidfung.altrestest.BR.bindingData, mResultMap);
+
+
+        mResultMap.put("locale", LocaleListCompat.getDefault().toLanguageTags().replace(",","\n"));
+
 
         Log.d(TAG, LocaleListCompat.getDefault().toString());
 //
@@ -35,5 +38,7 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        Log.d(TAG, Locale.getDefault().toString());
         Log.d(TAG, getString(R.string.locale_used));
+
+        binding.setVariable(com.androidfung.altrestest.BR.bindingData, mResultMap);
     }
 }
