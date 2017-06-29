@@ -1,10 +1,13 @@
 package com.androidfung.altrestest;
 
-import android.content.res.Configuration;
+
+import android.databinding.DataBindingUtil;
+import android.databinding.ObservableArrayMap;
+import android.databinding.ViewDataBinding;
 import android.os.Build;
 import android.os.LocaleList;
 import android.support.v4.os.LocaleListCompat;
-import android.support.v4.view.ViewConfigurationCompat;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,11 +17,14 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     public static final String TAG = MainActivity.class.getSimpleName();
+    private ObservableArrayMap<String, Object> mResultMap = new ObservableArrayMap<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        setContentView(R.layout.activity_main);
+        ViewDataBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        binding.setVariable(com.androidfung.altrestest.BR.bindingData, mResultMap);
 
         Log.d(TAG, LocaleListCompat.getDefault().toString());
 //
